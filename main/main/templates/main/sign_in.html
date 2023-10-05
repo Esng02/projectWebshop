@@ -1,0 +1,33 @@
+{% extends 'main/shablon.html' %}
+
+{% block title %} Регистрация пользователя {% endblock %}
+
+{% block log %}
+        <span class = "log"> Webshop </span>
+{% endblock %}
+
+{% block content %}
+    <div class = "first">
+        <h1>Войти в аккаунт</h1>
+    </div>
+
+    <form method="post">  <!-- method="get" - форма отправки данных без вложенных файлов (виден для всех)
+											 method="post" enctype="multipart/form-data" форма отправки данных с вложенными файлами (не виден)-->
+			<div class = "first">
+                <div>
+                    <p>Имя</p>
+				    <input placeholder="name" class = "form-control" type="text" name="username">
+                </div>
+                <br><br>
+                <div>
+                    <p>Пароль</p>
+				    <input placeholder="password" class = "form-control" type="password" name="userpass">
+                </div>
+                <br><br><br>
+                <div>
+				    <p><button class="btn btn-warning" type="submit">Войти</button></p>
+                </div>
+
+			</div>
+        </form>
+{% endblock %}

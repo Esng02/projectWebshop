@@ -1,0 +1,31 @@
+{% extends 'main/shablon.html' %}
+
+{% block title %} Регистрация пользователя {% endblock %}
+
+{% block log %}
+        <span class = "log"> Webshop </span>
+{% endblock %}
+
+{% block content %}
+    <div class = "first">
+        <h1>Регистрация пользователя</h1>
+    </div>
+
+    <form method="post">
+        {% csrf_token %}
+			<div class = "first">
+                {{ form.name }}<br>
+                {{ form.password }}<br>
+                {{ form.phone }}
+            </div>
+            <div class = "first">
+                <p>Роль</p>
+                {{ form.role }}
+            </div>
+            <div class = "first">
+                <button class = "btn btn-warning" type = "submit">Регистрация</button>
+                <br><br>
+                <p>{{ mess }}</p>
+            </div>
+    </form>
+{% endblock %}
