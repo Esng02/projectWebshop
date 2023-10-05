@@ -1,0 +1,27 @@
+{% extends 'main/shablon.html' %}
+
+{% block title %} Товары {% endblock %}
+
+{% if 1 == 1 %}
+    {% block log %}
+        <span class = "log"> Webshop </span><br><br>
+        <a href="{% url 'registration' %}"> Регистрация </a><br>
+        <a href="{% url 'sign_in' %}"> Войти </a>
+    {% endblock %}
+{% endif %}
+
+{% block content %}
+    <div class = "first">
+        <h1>Товары</h1>
+        <a href="{% url 'add_product' %}">Добавить новую запись</a>
+    </div>
+
+    {% for product in data_goods %}
+        <div class = "first">
+            <div class = "alert alert-warning">
+                <h3>{{ product.title }}</h3>
+                <p>{{product.description}}</p>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

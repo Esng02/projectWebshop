@@ -1,0 +1,28 @@
+{% extends 'main/shablon.html' %}
+
+{% block title %} Новая запись {% endblock %}
+
+{% block log %}
+        <span class = "log"> Webshop </span>
+{% endblock %}
+
+{% block content %}
+    <div class = "first">
+        <h1>Новая запись</h1>
+    </div>
+
+    <form method="post">
+        {% csrf_token %}
+			<div class = "first">
+                {{ form_goods.title }}<br>
+                {{ form_goods.description }}<br>
+                {{ form_goods.date }}<br>
+                {{ form_goods.author }}
+            </div>
+            <div class = "first">
+                <button class = "btn btn-warning" type = "submit">Создать запись</button>
+                <br><br>
+                <p>{{ mess }}</p>
+            </div>
+    </form>
+{% endblock %}
